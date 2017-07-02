@@ -2,6 +2,7 @@
 
 namespace frontend\components;
 
+use yii\helpers\BaseFileHelper;
 use yii\base\Component;
 use yii\helpers\Url;
 
@@ -31,16 +32,23 @@ class Common extends Component{
         return $data['bedroom'].' Bed Rooms and '.$data['kitchen'].' Kitchen Room Aparment on Sale';
     }
 
-    public static function getImageAdvert($data, $general = true, $original = false)
+    public static function getImageAdvert($data,$general = true,$original = false)
     {
-
         $image = [];
-        $base = Url::base();
-        if($original){
-            $image[] = $base.'uploads/adverts/'.$data['idadvert'].'/general/'.$data['general_image'];
+        $base = '/';
+        if($general){
+
+            $image[] = $base.'uploads/adverts/'.$data['idadvert'].'/general/small_'.$data['general_image'];
         }
         else{
-            $image[] = $base.'uploads/adverts/'.$data['idadvert'].'/general/small_'.$data['general_image'];
+            $path = \Yii::getAlias("@frontend/web/uploads/adverts/".$data['idadvert']);
+            $files = BaseFileHelper::findFiles($path);
+
+            foreach($files as $file){
+                if (strstr($file, "small_") && !strstr($file, "general")) {
+                    $image[] = $base . 'uploads/adverts/' . $data['idadvert'] . '/' . basename($file);
+                }
+            }
         }
 
         return $image;
@@ -49,6 +57,11 @@ class Common extends Component{
     public static function substr($text,$start=0,$end=50)
     {
         return mb_substr($text,$start,$end);
+    }
+
+    public static function getType($row)
+    {
+        return ($row['sold']) ? 'Sold' : 'New';
     }
 
 }
