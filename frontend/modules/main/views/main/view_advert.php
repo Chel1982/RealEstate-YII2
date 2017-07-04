@@ -70,9 +70,7 @@
                 <div class="col-lg-12 col-sm-6 ">
                     <div class="enquiry">
                         <h6><span class="glyphicon glyphicon-envelope"></span> Post Enquiry</h6>
-                        <?
-                        $form = \yii\bootstrap\ActiveForm::begin();
-                        ?>
+                        <?php $form = \yii\bootstrap\ActiveForm::begin();?>
                         <?=$form->field($model_feedback,'email')->textInput(['value' => $current_user['email'], 'placeholder' => 'you@yourdomain.com'])->label(false) ?>
                         <?=$form->field($model_feedback,'name')->textInput(['value' => $current_user['username'], 'placeholder' => 'Username'])->label(false) ?>
                         <?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Whats on your mind?'])->label(false) ?>
