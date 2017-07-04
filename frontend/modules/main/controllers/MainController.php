@@ -98,7 +98,6 @@ class MainController extends Controller
         $model_feedback->addRule('text','required');
         $model_feedback->addRule('email','email');
 
-
         if(\Yii::$app->request->isPost) {
             if ($model_feedback->load(\Yii::$app->request->post()) && $model_feedback->validate()){
 

@@ -39,15 +39,13 @@
 
                 </div>
 
-
-
-
                 <div class="spacer"><h4><span class="glyphicon glyphicon-th-list"></span> Properties Detail</h4>
                     <p> <?=$model->description ?></p>
                 </div>
-                <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
+                <!--<div>
+                    <h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
                     <div class="well"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../../maps.google.com/fi000001.002642&t=m&z=14&output=embed" ></iframe></div>
-                </div>
+                </div>-->
 
             </div>
             <div class="col-lg-4">
@@ -76,9 +74,7 @@
                         <?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Whats on your mind?'])->label(false) ?>
                         <button type="submit" class="btn btn-primary" name="Submit">Send Message</button>
 
-                        <?
-                        \yii\bootstrap\ActiveForm::end();
-                        ?>
+                        <?php \yii\bootstrap\ActiveForm::end(); ?>
 
                     </div>
                 </div>
