@@ -84,7 +84,6 @@ class AdvertController extends AuthController
         }
     }
 
-
     public function actionFileUploadImages()
     {
         if(Yii::$app->request->isPost){
@@ -177,7 +176,6 @@ class AdvertController extends AuthController
             }
         }
         catch(\yii\base\Exception $e){}
-
 
         return $this->render("step2", ['model' => $model, 'image' => $image, 'images_add' => $images_add]);
     }

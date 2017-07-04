@@ -1,6 +1,5 @@
 <div class="">
 
-
     <div id="slider" class="sl-slider-wrapper">
 
         <div class="sl-slider">
@@ -22,8 +21,6 @@
 
     </div><!-- /sl-slider -->
 
-
-
     <nav id="nav-dots" class="nav-dots">
         <?php if($count_general >= 1): ?>
             <span class="nav-dot-current"></span>
@@ -42,8 +39,6 @@
 
 </div><!-- /slider-wrapper -->
 </div>
-
-
 
 <div class="banner-search">
     <div class="container">
@@ -99,9 +94,12 @@
 
 
                 </div>
-                <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                    <p>Join now and get updated with all the properties deals.</p>
-                    <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div>
+                <?php if(Yii::$app->user->isGuest): ?>
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+                        <p>Join now and get updated with all the properties deals.</p>
+                        <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
