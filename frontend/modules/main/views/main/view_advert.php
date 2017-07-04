@@ -42,10 +42,10 @@
                 <div class="spacer"><h4><span class="glyphicon glyphicon-th-list"></span> Properties Detail</h4>
                     <p> <?=$model->description ?></p>
                 </div>
-                <!--<div>
+                <div>
                     <h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
                     <div class="well"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../../maps.google.com/fi000001.002642&t=m&z=14&output=embed" ></iframe></div>
-                </div>-->
+                </div>
 
             </div>
             <div class="col-lg-4">
